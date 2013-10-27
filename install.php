@@ -43,7 +43,7 @@ else {
 	unlink('install.php');
 
     echo '<div class="req-finish">';
-    echo 'System requirement checking successfully completed <a href="site/confirmForm.php">Click here</a> for database connectivity</div>';
+    echo 'System requirement checking successfully completed <a href="configForm.php">Click here</a> for database connectivity</div>';
 }
 ?>
 
