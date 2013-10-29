@@ -6,7 +6,6 @@
 
 <div style="color: green; font-size: 17px; font-weight: 700;">
 <?php //$userCount = User::model()->count();
- // if($userCount != 0) {
 	$user = User::model()->findByPk(1);
 	echo 'Your UserName and Password is : '.$user->user_organization_email_id."\n";
   //}
