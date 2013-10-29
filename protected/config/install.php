@@ -7,23 +7,6 @@ if(!version_compare(PHP_VERSION, "5.3.2", ">=")) {
   $flag = 1;
 }
 
-$canDo = array();
-$canDo['phpmail'] = @ini_get('sendmail_path') && function_exists('mail');
-if($canDo['phpmail']){
-	// Check for valid, existing sendmail_path
-	$smpath = explode(' ', ini_get('sendmail_path'));
-	$smpath = $smpath[0];
-	$canDo['phpmail'] = is_executable($smpath);
-	if(!$canDo['phpmail']) {
-	 $error_list[] = 'Php Mail function not enable. Refer <a href="http://www.rudrasoftech.com/forum/forum/view/id/7" target="_blank">this link</a> to enable Mail function.';
-	  $flag = 1;
-	}
-}
-else {
-	 $error_list[] = 'Php Mail function not enable. Refer <a href="http://www.rudrasoftech.com/forum/forum/view/id/7" target="_blank">this link</a> to enable Mail function.';
-	$flag = 1;
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +43,7 @@ else {
 	unlink('install.php');
 
     echo '<div class="req-finish">';
-    echo 'System requirement checking successfully completed <a href="site/confirmForm.php">Click here</a> for database connectivity</div>';
+    echo 'System requirement checking successfully completed <a href="configForm.php">Click here</a> for database connectivity</div>';
 }
 ?>
 
