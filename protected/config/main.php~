@@ -1,5 +1,5 @@
 <?php
-include realpath('dbconf.php');
+include stream_resolve_include_path('dbconf.php');
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'EduSec College Management System',

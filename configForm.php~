@@ -1,27 +1,3 @@
-<?php
-if($_POST) {
-$connect = mysql_connect($_POST['dbHost'], $_POST['dbUser'], $_POST['dbPass']); 
-
-  if($connect) {
-	if(mysql_select_db($_POST['dbName'])) {
-		$dbConf = 'dbconf.php';
-		$handle = fopen($dbConf, 'w') or die('Cannot open file:  '.$dbConf);
-		$data = '<?php $userName="'.$_POST['dbUser'].'";'."\n";
-		$data .= '$passWord="'.$_POST['dbPass'].'";'."\n";
-		$data .= '$dbName="'.$_POST['dbName'].'";'."\n";
-		$data .= '$host="'.$_POST['dbHost'].'"; ?>';
-		fwrite($handle, $data);
-    		
-		header('Location: ' . 'site/index');
-	}
-	else {
-	  $error = 'Could not select database.';
-	}
-    }
-  else
-   $error = 'Not connected';
-}
-?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
@@ -39,7 +15,7 @@ $connect = mysql_connect($_POST['dbHost'], $_POST['dbUser'], $_POST['dbPass']);
 		<h1 class="title">Installation Page</h1>
 		<span>Welcome to the Edusec application installer! We need to collect a little information before we can get your application up and running.</span>
 	</div>
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+<form action="" method="POST">
 <div id="db-form-box">
         <div class="row"><label for="dbHost">Host Name</label><input type="text" id="dbHost" name="dbHost"></div>
         <div class="row"><label for="dbUser">Username</label><input type="text" id="dbUser" name="dbUser"></div>
@@ -50,8 +26,33 @@ $connect = mysql_connect($_POST['dbHost'], $_POST['dbUser'], $_POST['dbPass']);
 <input type="submit" value="Save" class="btnblue">
 </form>
 <div class="check-db-status">
-   <?php echo $error; ?>
+<?php
+if($_POST) {
+$connect = mysql_connect($_POST['dbHost'], $_POST['dbUser'], $_POST['dbPass']); 
+
+  if($connect) {
+	if(mysql_select_db($_POST['dbName'])) {
+		$dbConf = 'dbconf.php';
+		$handle = fopen($dbConf, 'w') or die('Cannot open file:  '.$dbConf);
+		$data = '<?php $userName="'.$_POST['dbUser'].'";'."\n";
+		$data .= '$passWord="'.$_POST['dbPass'].'";'."\n";
+		$data .= '$dbName="'.$_POST['dbName'].'";'."\n";
+		$data .= '$host="'.$_POST['dbHost'].'"; ?>';
+		fwrite($handle, $data);
+    		
+		header('Location: ' . 'site/index');
+	}
+	else {
+	  echo 'Could not select database.';
+	}
+    }
+  else
+   echo 'Not connected';
+}
+?>
 </div>
 </div>
 </div></body>
-</html>
+</html> 
+
+

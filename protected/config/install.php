@@ -2,8 +2,8 @@
 $flag = 0;
 $error_list = array();
 
-if(!version_compare(PHP_VERSION, "5.3.2", ">=")) {
-  $error_list[] = 'Need atleast or greater version of PHP 5.3.2';
+if(!version_compare(PHP_VERSION, "5.2.2", ">=")) {
+  $error_list[] = 'Need atleast or greater version of PHP 5.2.2';
   $flag = 1;
 }
 
