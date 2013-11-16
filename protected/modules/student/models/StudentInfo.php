@@ -97,8 +97,6 @@ class StudentInfo extends CActiveRecord
 			array('student_roll_no', 'CRegularExpressionValidator', 'pattern'=>'/^\w*[A-Za-z0-9\/_-]*[0-9]+$/','message'=>''),
 			array('student_gr_no,student_merit_no', 'CRegularExpressionValidator', 'pattern'=>'/^\w*[0-9]+$/','message'=>''),
 
-			//array('student_enroll_no', 'length', 'max'=>12, 'min'=>12,'message'=>'Enrollment Number should be 12 chareacter'),
-
 			array('student_first_name, student_middle_name, student_last_name, student_father_name, student_mother_name, student_birthplace', 'length', 'max'=>25),
 			array('student_guardian_name', 'length', 'max'=>100),
 			//array('student_enroll_no','CRegularExpressionValidator', 'pattern'=>'/^\w([0-9]+)$/','message'=>''),

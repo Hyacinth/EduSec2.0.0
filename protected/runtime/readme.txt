@@ -6,7 +6,7 @@ Welcome to  EduSec!
 
 Edusec - College Management Software
 
-EduSec has a suite of selective modules specifically tailored to the requirements of education industry. EduSec is engineered and designed considering range of management functions within university. With the use of EduSec, staff can be more accountable as it helps to know the performance of each department in just few seconds. Almost all departments within education industry (e. g. admission, administration, time table, examination, HR, finance etc) can be synchronized and accessed. EduSec helps to assign the responsibilities to employee staff and can reduce time wastage and can speed up the administrative functions. Core functions like admissions, library management, transport management, students’ attendance in short entire range of university functions can be well performed by EduSec.
+EduSec has a suite of selective modules specifically tailored to the requirements of education industry. EduSec is engineered and designed considering range of management functions within university. With the use of EduSec, staff can be more accountable as it helps to know the performance of each department in just few seconds. Almost all departments within education industry (e. g. admission, administration, time table, examination, HR, finance etc) can be synchronized and accessed. EduSec helps to assign the responsibilities to employee staff and can reduce time wastage and can speed up the administrative functions. Core functions like admissions, library management, transport management, students attendance in short entire range of university functions can be well performed by EduSec.
 
 # Documentation and Support #
 * www.rudrasoftech.com/forum
@@ -25,4 +25,5 @@ EduSec has a suite of selective modules specifically tailored to the requirement
 5. You are now ready to use EduSec.
 
 # Known Issues #
-- The  .htaccess  file  may  cause  issues  on  some  servers.  If  you  get  a   500 Internal Server Error  when you  try  to load the installer,  delete  the .htaccess file (the application will still work without it.)
+- The  .htaccess  file  may  cause  issues  on  some  servers.  If  you  get  a   500 Internal Server Error  when you  try  to load the installer,  
+- On Windows Server WAMP / XAMPP  need to rewrite apache serveice : click on the WAMP/XAMPP icon and goto apache --> Apache Modules --> rewrite_modle  make sure this rewrite_module is chacked.

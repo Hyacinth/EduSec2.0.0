@@ -117,9 +117,9 @@ class EmployeeInfo extends CActiveRecord
 
 			array('employee_attendance_card_id','unique', 'message'=>'Card id must be unique'),
 			
-			array('employee_marital_status, employee_probation_period', 'length', 'max'=>10),
+			array('employee_no, employee_marital_status, employee_probation_period', 'length', 'max'=>10),
 
-			array('employee_probation_period','CRegularExpressionValidator','pattern'=>'/^([A-Za-z0-9 ]+)$/','message'=>''),
+			array('employee_no,employee_probation_period','CRegularExpressionValidator','pattern'=>'/^([A-Za-z0-9 ]+)$/','message'=>''),
 			
 			array('employee_name_alias, employee_first_name, employee_middle_name, employee_last_name, employee_birthplace, employee_reference', 'length', 'max'=>25),
 			array('employee_hobbies, employee_technical_skills, employee_project_details, employee_curricular', 'length', 'max'=>200, 'message'=>''),
